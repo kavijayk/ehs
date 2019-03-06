@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+}
+
+<div class="w3-content w3-section" style="max-width:600px">
+
+    <img class="mySlides" src="~/Content/Welcome.jpg" style="width:1230px; height:390px;background-attachment:fixed;background-position:center;background-size:cover">
+    @*<img class="mySlides" src="~/Content/rawpixel-973116-unsplash.jpg" style="width:1300px; height:600px">*@
+    @*<img class="mySlides" src="~/images/mengyi-766684-unsplash.jpg" style="width:800px; height:450px">*@
+</div>
+
+
+<script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) { myIndex = 1 }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 3000); // Change image every 3 seconds
+        }
+</script>
